@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginStart="@dimen/margin_wide"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/constraint_layout">
+
 
     <TextView
         android:id="@+id/box_one_text"

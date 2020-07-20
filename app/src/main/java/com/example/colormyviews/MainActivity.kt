@@ -10,7 +10,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setListeners()
     }
+
     private fun makeColored(view: View) {
         when (view.id) {
 
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private fun setListeners() {
 
         val boxOneText = findViewById<TextView>(R.id.box_one_text)
@@ -34,7 +37,16 @@ class MainActivity : AppCompatActivity() {
         val boxFiveText = findViewById<TextView>(R.id.box_five_text)
 
         val rootConstraintLayout = findViewById<View>(R.id.constraint_layout)
+        val clickableViews: List<View> =
+            listOf(
+                boxOneText, boxTwoText, boxThreeText,
+                boxFourText, boxFiveText, rootConstraintLayout
+            )
+
+        for (item in clickableViews) {
+            item.setOnClickListener { makeColored(it) }
+
+        }
 
     }
-
 }
